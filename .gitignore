@@ -20,3 +20,5 @@ wheels/
 # Opcional: Arquivos de ambiente virtual (recomendado)
 venv/
 .venv/
+
+empresa.db
