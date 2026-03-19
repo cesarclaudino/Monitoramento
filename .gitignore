@@ -21,4 +21,5 @@ wheels/
 venv/
 .venv/
 
-empresas.db
+# Ignorar banco de dados SQLite
+*.db
