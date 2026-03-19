@@ -21,4 +21,4 @@ wheels/
 venv/
 .venv/
 
-empresa.db
+empresas.db
