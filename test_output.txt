@@ -1,0 +1,14 @@
+--- First process (new file: normal.txt) ---
+LOG: ­ƒôï Copia ­ƒôä ARQUIVO: normal.txt
+--- Process again (no change) ---
+--- Modify file and process ---
+LOG: ­ƒôï Copia ­ƒôä ARQUIVO: normal.txt
+--- Process folder infFolha (should be ignored silently) ---
+Note: Could not delete test_empresas.db
+--- First process (new file: normal.txt) ---
+LOG: ­ƒôï Copia ­ƒôä ARQUIVO: normal.txt
+--- Process again (no change) ---
+--- Modify file and process ---
+LOG: ­ƒôï Copia ­ƒôä ARQUIVO: normal.txt
+--- Process folder infFolha (should be ignored silently) ---
+Note: Could not delete test_empresas.db
