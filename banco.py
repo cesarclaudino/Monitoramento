@@ -108,3 +108,21 @@ class DatabaseManager:
             """, (caminho_arquivo, mtime_str, processamento_str))
             conn.commit()
 
+    def listar_tracking(self) -> List[Tuple]:
+        """Retorna todos os registros de tracking."""
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT caminho_arquivo, last_modified, data_processamento FROM arquivo_tracking ORDER BY data_processamento DESC")
+            return cursor.fetchall()
+
+    def excluir_tracking_multiplo(self, caminhos: List[str]) -> None:
+        """Exclui múltiplos registros de tracking."""
+        if not caminhos:
+            return
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            # SQLite handles lists via IN (...)
+            placeholders = ', '.join(['?'] * len(caminhos))
+            cursor.execute(f"DELETE FROM arquivo_tracking WHERE caminho_arquivo IN ({placeholders})", caminhos)
+            conn.commit()
+
